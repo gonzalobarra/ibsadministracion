@@ -1,2 +1,2 @@
 # ibsadministracion
-Base proyecto for the new IBSADMIN site
+Base proyect for the new IBSADMIN site
