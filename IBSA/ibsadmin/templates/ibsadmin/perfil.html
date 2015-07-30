@@ -6,11 +6,10 @@
 </ul>
 {% endif %}
 
-<h1>Login</h1>
+<p>Perfil</p>
 
-<form method="post" role="form" action="{% url 'login_process' %}">
+<form method="post" role="form" action="{% url 'perfil' %}">
     {% csrf_token %}
-    {{login_form.username}}
-    {{login_form.password}}
-    <button type="submit">Ingresar</button>
+    {{user_form}}
+    <button type="submit">Modificar</button>
 </form>
