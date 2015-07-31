@@ -86,3 +86,6 @@ target/
 # Compiled files
 *.pyc
 *.pyo
+
+#settings
+settings.py
