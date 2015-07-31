@@ -31,7 +31,22 @@ class user_mod_form(forms.ModelForm):
         model = User
         fields = ('first_name', 'last_name','email',)
         widgets = {
-            'first_name': forms.TextInput(attrs={'placeholder': 'ej: Juan'}),  
-            'last_name': forms.TextInput(attrs={'placeholder': 'ej: Perez'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'ej: ejemplo@ejemplo.com'}),        
+            'first_name': forms.TextInput(attrs={'placeholder': 'Juan'}),  
+            'last_name': forms.TextInput(attrs={'placeholder': 'Perez'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'ejemplo@ejemplo.com'}),        
         }
+
+# Form para contacto
+class contact_form(forms.Form):
+    first_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Juan'})
+        )
+    last_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Perez'})
+        )
+    email = forms.CharField(
+        widget=forms.EmailInput(attrs={'placeholder': 'ejemplo@ejemplo.com'})
+        )
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={'rows':'5'})
+        )

@@ -18,6 +18,14 @@ login_var = '/login/'
 def index(request):
     return render_to_response('ibsadmin/index.html', {'messages': messages}, context_instance = RequestContext(request))  
 
+# Vista de contacto
+def contact(request):
+    con_form = contact_form()
+    if request.method == 'POST':
+        messages.success(request, 'Gracias por contactarnos, lo contactaremos a la brevedad')
+        return HttpResponseRedirect('/contacto/')
+    return render_to_response('ibsadmin/contact.html', {'contact_form': con_form}, context_instance = RequestContext(request))    
+
 # Vistas encargadas de manejar el login y logout
 def applogin(request):
     if not request.user.is_anonymous():

@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^resumen/$', views.resumen, name='resumen'),
     url(r'^perfil/$', views.perfil, name='perfil'),
     url(r'^password_change/$', views.password_change, name='password_change'),
+    url(r'^contact/$', views.contact, name='contact'),
 ]

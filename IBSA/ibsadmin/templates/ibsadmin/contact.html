@@ -1,0 +1,18 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<p>Contacto</p>
+
+<form method="post" role="form" action="{% url 'contact' %}">
+    {% csrf_token %}
+    {{contact_form.first_name}}
+    {{contact_form.last_name}}
+    {{contact_form.email}}
+    {{contact_form.message}}
+    <button type="submit">Enviar</button>
+</form>
